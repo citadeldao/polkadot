@@ -1,0 +1,27 @@
+Future prepareTransfer({
+    @required String session,
+    @required String net,
+    @required String address,
+    @required String toAddress,
+    @required String amount,
+    String publicKey,
+    String fee,
+    String tip,
+    String gas,
+    String gasPrice,
+    String memo,
+    String tokenType,
+  }) async {
+    final json = await transactionsNetworkDataProvider.prepareTransfer(
+      net: net,
+      session: session,
+      address: address,
+      toAddress: toAddress,
+      amount: amount,
+      publicKey: publicKey,
+      fee: fee,
+      tip: tip,
+      gas: gas,
+      gasPrice: gasPrice,
+      memo: memo,
+    );
