@@ -5,6 +5,8 @@
   The library "bip39" is also used. 
 
  Polkadot wallet addition function:
+ 
+```
     static async addNewWalletPolkadot({ type, password, opts, isFirst, mnemonic }: any): Promise<any> {
       const seed = opts.decodeSeed.data ? opts.decodeSeed.data : opts.decodeSeed
       console.log('start seed', seed)
@@ -71,11 +73,13 @@
         publicKey: account.publicKey
       })
     }
+```
 
 2) Transaction signing
 Access to the wallet is obtained using a mnemonic phrase
 The following libraries are also used here "crypto-js", "@polkadot/api", "@polkadot/types", "@polkadot/metadata"
 
+```
   const { Keyring } = require('@polkadot/api')
   const { TypeRegistry } = require('@polkadot/types')
   const { Metadata } = require('@polkadot/metadata')
@@ -113,3 +117,4 @@ The following libraries are also used here "crypto-js", "@polkadot/api", "@polka
   } else {
     return 'Error sign transaction'
   }
+```
