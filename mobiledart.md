@@ -1,6 +1,6 @@
 The [Citadel.one](http://citadel.one/) mobile app is written in the Dart language and uses the Flutter framework. This is a cross-platform application for iOS and Android.
 
-We use [js library](https://github.com/citadeldao/citadel-lib) to work with Polka.  In order to execute the js code in the mobile app, we use [invisible WebView](https://pub.dev/packages/flutter_inappwebview). The WebView contains only one script with the library code:
+We use [js library](https://github.com/citadeldao/citadel-lib) to work with Polkadot.  In order to execute the js code in the mobile app, we use [invisible WebView](https://pub.dev/packages/flutter_inappwebview). The WebView contains only one script with the library code:
 
 
 ```
