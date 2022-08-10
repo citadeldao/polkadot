@@ -124,5 +124,20 @@ Future<JSRawResponse> prepareTransfer(
 }
 
 ```
-
 And then, we sign it and send it to the backend:
+
+```dart
+@override
+Future<JSSignAndSendResponse> signAndSend(
+  String walletId,
+  JsonObject rawTransaction,
+  JSSignAndSendArgs options,
+) {
+  return controller.callAsyncJavaScript(
+    functionBody:
+        '''return await citadel.signAndSend(${serializeToJS(walletId)}, ${serializeToJS(rawTransaction)}, ${serializeToJS(options)})''',
+  ).then(
+    (it) => deserialize<JSSignAndSendResponse>(jsonDecode(it!.value))!,
+  );
+}
+```
